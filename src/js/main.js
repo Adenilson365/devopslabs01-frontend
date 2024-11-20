@@ -1,5 +1,17 @@
 // Importa os produtos e a função de renderização
-import { products, renderProducts } from './modules/productList.js';
+import ProductManager from "./modules/ProductManager.js";
+import config from "./config/apiConfig.js";
 
-// Chama a função para renderizar os produtos na lista
-renderProducts(products, "product-list");
+const productManager = new ProductManager(
+    `${config.baseUrl}/teste`,
+    "product-list"
+  );
+
+  // Função para carregar e renderizar produtos
+  async function loadAndRenderProducts() {
+    await productManager.loadAndRenderProducts();
+  }
+  
+  
+  // Chama a função ao carregar a página
+  document.addEventListener("DOMContentLoaded", loadAndRenderProducts());
