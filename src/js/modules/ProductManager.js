@@ -44,6 +44,7 @@ class ProductManager {
     async loadAndRenderProducts() {
       const products = await this.fetchProducts();
       this.renderProducts(products);
+      console.log(products);
     }
   }
   

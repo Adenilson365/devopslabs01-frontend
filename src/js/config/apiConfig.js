@@ -1,8 +1,7 @@
-import dotenv from "dotenv";
-dotenv.config();
+
 
 const config = {
-    baseUrl: process.env.BASE_URL || "http://192.168.200.102:3333"
+    baseUrl: "http://192.168.58.2:32000"
   };
   
   export default config;
