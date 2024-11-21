@@ -34,7 +34,7 @@ class ProductManager {
         const listItem = document.createElement("li");
         listItem.innerHTML = `
           <strong>${product.name}</strong>
-          <p>Price: $${product.price.toFixed(2)}</p>
+          <p> ${product.price.toFixed(2)}</p>
         `;
         productList.appendChild(listItem);
       });

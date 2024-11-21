@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: adenilsonkon/devopslabs01-frontend:v5
+        image: adenilsonkon/devopslabs01-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -43,4 +43,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+      nodePort: 32002
   type: NodePort

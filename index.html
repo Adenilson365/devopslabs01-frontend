@@ -3,16 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalogo</title>
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./src/styles/stylesheet.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .header {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content {
+      padding: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #load-products-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #load-products-btn:hover {
+      background-color: #45a049;
+    }
+
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .product-list li {
+      background: #ffffff;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-list li:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-list li h3 {
+      margin: 0;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .product-list li p {
+      margin: 0;
+      color: #333;
+      font-weight: 700;
+      flex: 0;
+      margin-left: 20px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
-    <h1>Catalogo</h1>
+    <h1>Catálogo</h1>
   </header>
 
   <main class="main-content">
-    <button id="load-products-btn">Carregar Produtos</button> <!-- Botão para carregar produtos -->
+    <button id="load-products-btn"><i class="fas fa-sync-alt"></i> Carregar Produtos</button>
     <ul id="product-list" class="product-list"></ul>
   </main>
 

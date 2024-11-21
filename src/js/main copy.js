@@ -2,7 +2,7 @@
 import ProductManager from "./modules/ProductManager.js";
 import config from "./config/apiConfig.js";
 
-// Inicializa o gerenciador de produtos
+
 const productManager = new ProductManager(
   `${config.baseUrl}/products`,
   "product-list"
@@ -15,12 +15,10 @@ async function loadAndRenderProducts() {
 
 // Evento para carregar produtos quando o documento estiver pronto
 document.addEventListener("DOMContentLoaded", () => {
-  // Carregar produtos automaticamente assim que a página for carregada
-  loadAndRenderProducts();
-
   // Carregar produtos quando o botão for clicado
   const loadButton = document.getElementById("load-products-btn");
   if (loadButton) {
     loadButton.addEventListener("click", loadAndRenderProducts);
   }
+
 });
