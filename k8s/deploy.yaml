@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: adenilsonkon/devopslabs01-frontend:latest
+        image: adenilsonkon/devopslabs01-frontend:v1.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -27,9 +27,9 @@ spec:
           limits:
             cpu: 250m
             memory: 250Mi
-        env:
-        - name: BASE_URL
-          value: "http://catalogo.default.svc.cluster.local:3333"
+        envFrom:
+        - configMapRef:
+            name: frontend-config
   
 ---
 apiVersion: v1
@@ -43,5 +43,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32002
-  type: NodePort
+  type: ClusterIP
