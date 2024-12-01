@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: frontend-v2
   labels:
     app: frontend
-    version: v1
+    version: v2
 spec:
   replicas : 1
   selector:
@@ -14,11 +14,11 @@ spec:
     metadata:
       labels:
         app: frontend
-        version: v1
+        version: v2
     spec:
       containers:
-      - name: frontend
-        image: adenilsonkon/devopslabs01-frontend:v1.0.5
+      - name: frontend-v2
+        image: adenilsonkon/devopslabs-frontend:canary
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -33,16 +33,3 @@ spec:
         - configMapRef:
             name: frontend-config
   
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend
-spec:
-  selector:
-    app: frontend
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: ClusterIP
