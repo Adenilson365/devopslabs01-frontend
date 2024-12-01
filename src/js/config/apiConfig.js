@@ -1,5 +1,5 @@
 const config = {
-  baseUrl: 'https://api.konzelmann.com.br',
+  baseUrl: 'http://api-local.com',
 };
 
 export default config;

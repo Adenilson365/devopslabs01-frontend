@@ -5,7 +5,7 @@ import config from "./config/apiConfig.js";
 // Inicializa o gerenciador de produtos
 const productManager = new ProductManager(
   `${config.baseUrl}/products`,
-  "product-list"
+  `${config.baseUrl}/get-image/`
 );
 
 // Função para carregar e renderizar produtos
