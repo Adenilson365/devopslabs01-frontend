@@ -4,9 +4,10 @@ metadata:
   name: frontend
   labels:
     app: frontend
+    pdb: 'true'
     version: v1
 spec:
-  replicas : 1
+  replicas : 2
   selector:
     matchLabels:
       app: frontend
@@ -15,10 +16,30 @@ spec:
       labels:
         app: frontend
         version: v1
+        block-especific: 'true'
     spec:
+      initContainers:
+      - name: frontend-config
+        image: busybox
+        command: ['sh','-c']
+        args: 
+          - |
+            cat <<EOF > /app/src/js/config/apiConfig.js
+            const config = {
+              "baseUrl": "${API_URL}",
+            };
+            export default config;
+            EOF
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/src/js/config
+        envFrom:
+        - configMapRef:
+            name: frontend-config
       containers:
       - name: frontend
-        image: adenilsonkon/devopslabs01-frontend:v1.0.5
+        image: adenilsonkon/devopslabs01-frontend:v1.0.6-stable
+        #image: adenilsonkon/devopslabs01-frontend:v1.0.6-canary
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -32,17 +53,10 @@ spec:
         envFrom:
         - configMapRef:
             name: frontend-config
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/src/js/config
+      volumes:
+      - name: config-volume
+        emptyDir: {}
   
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend
-spec:
-  selector:
-    app: frontend
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: ClusterIP

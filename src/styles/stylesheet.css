@@ -50,7 +50,7 @@ body {
 }
 
 .card .stars {
-  color: #ffa500;
+  color: #00BBF5;
   display: inline-block;
   vertical-align: middle;
 }
@@ -72,7 +72,7 @@ body {
 }
 
 .card .info .preco {
-  color: #f4511e;
+  color: #3587A0;
   font-size: 1.5em;
   margin: 5px 0;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .card .btn-comprar {
-  background-color: #ff6f00;
+  background-color: #22A3CA;
   color: white;
   padding: 10px;
   text-align: center;
@@ -95,7 +95,7 @@ body {
 }
 
 .card .btn-comprar:hover {
-  background-color: #e65c00;
+  background-color: #3587A0;
 }
 
 .carousel-button {
