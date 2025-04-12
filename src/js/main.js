@@ -1,6 +1,13 @@
 // Importa os produtos e a função de renderização
 import ProductManager from "./modules/ProductManager.js";
 import config from "./config/apiConfig.js";
+import './config/instrumentation.js'
+
+
+
+
+
+
 
 // Inicializa o gerenciador de produtos
 const productManager = new ProductManager(
