@@ -43,7 +43,7 @@ jobs:
       - name: Atualiza tag no repositório OPS
         uses: actions/checkout@v4
         with: 
-          repository: Adenilson365/devopslabs01-ops-catalogo
+          repository: Adenilson365/devopslabas01-ops-frontend
           token: ${{ secrets.ACCESS_TOKEN_GIT }}
           ref: ${{ github.ref_name }}
           path: .
