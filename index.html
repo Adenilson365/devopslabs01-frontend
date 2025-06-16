@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lojinha-DevOps</title>
-  <link rel="stylesheet" href="./src/styles/stylesheet.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lojinha DevOps</title>
+    <link rel="stylesheet" href="./src/styles/stylesheet.css" />
+  </head>
   <body>
-    <h2>Computadores</h2>
-    <div class="products-container" id="computadores-container">
-        <button class="carousel-button button-left" onclick="scrollToLeft('computadores')">❮</button>
-        <div class="products-container" id="computadores"></div>
-        <button class="carousel-button button-right" onclick="scrollToRight('computadores')">❯</button>
+    <h1>Catálogo de Produtos</h1>
+
+    <div id="computadores-container">
+      <h2>Computadores</h2>
+      <div id="computadores" class="category"></div>
     </div>
-    
-    <h2>Notebooks</h2>
-    <div class="products-container" id="notebooks-container">
-        <button class="carousel-button button-left" onclick="scrollToLeft('notebooks')">❮</button>
-        <div class="products-container" id="notebooks"></div>
-        <button class="carousel-button button-right" onclick="scrollToRight('notebooks')">❯</button>
+    <div id="notebooks-container">
+      <h2>Notebooks</h2>
+      <div id="notebooks" class="category"></div>
     </div>
-    
-    <h2>Periféricos</h2>
-    <div class="products-container" id="perifericos-container">
-        <button class="carousel-button button-left" onclick="scrollToLeft('perifericos')">❮</button>
-        <div class="products-container" id="perifericos"></div>
-        <button class="carousel-button button-right" onclick="scrollToRight('perifericos')">❯</button>
+    <div id="perifericos-container">
+      <h2>Periféricos</h2>
+      <div id="perifericos" class="category"></div>
     </div>
-    
-    <h2>Hardware</h2>
-    <div class="products-container" id="hardware-container">
-        <button class="carousel-button button-left" onclick="scrollToLeft('hardware')">❮</button>
-        <div class="products-container" id="hardware"></div>
-        <button class="carousel-button button-right" onclick="scrollToRight('hardware')">❯</button>
+    <div id="hardware-container">
+      <h2>Hardware</h2>
+      <div id="hardware" class="category"></div>
     </div>
-  <script type="module" src="src/js/main.js"></script>
-  <script src="./src/js/functions/index.js"></script>
-</body>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>

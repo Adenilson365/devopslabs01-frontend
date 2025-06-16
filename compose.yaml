@@ -1,10 +1,25 @@
 services:
-  app:
-    container_name: frontend
-    image: adenilsonkon/devopslabs01-frontend:latest
-    build : 
+  frontend-config:
+    image: busybox:latest
+    volumes:
+      - ./src/config:/app/src/config
+    entrypoint: >
+      sh -c "echo 'const config = {
+        baseUrl: \"https://dev.konzelmann.com.br\"
+      };
+      export default config;' > /app/src/config/apiConfig.js"
+    environment:
+      - BASE_URL=https://dev.konzelmann.com.br
+    restart: "no"
+  frontend:
+    build:
       context: .
       dockerfile: Dockerfile
+    container_name: lojinha-frontend
     ports:
       - "8080:80"
-    restart: unless-stopped
+    depends_on:
+      - frontend-config
+    volumes:
+      - ./src/config:/app/src/config
+    restart: "unless-stopped"

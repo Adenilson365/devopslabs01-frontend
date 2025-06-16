@@ -1,126 +1,27 @@
 body {
   font-family: Arial, sans-serif;
+  padding: 1rem;
+  background: #f2f2f2;
 }
 
-.products-container-wrapper {
-  position: relative;
+.category {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.products-container {
-  display: flex;
-  overflow: hidden;
-  gap: 20px;
-  padding: 10px 0;
-  position: relative;
-  flex: 1;
-  scroll-behavior: smooth;
-}
-
-.card {
-  border: 1px solid #ddd;
+.product-card {
+  background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 500px;
-  flex: 0 0 auto;
-  margin: 10px 0;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card .top-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-}
-
-.card .top-label {
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  width: 200px;
   text-align: center;
-  font-weight: bold;
-  display: inline-block;
 }
 
-.card .stars {
-  color: #00BBF5;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.card img {
+.product-img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
-  margin-top: 10px;
-}
-
-.card .info {
-  padding: 15px;
-}
-
-.card .info .nome {
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.card .info .preco {
-  color: #3587A0;
-  font-size: 1.5em;
-  margin: 5px 0;
-}
-
-.card .info .parcelamento {
-  color: gray;
-  margin-bottom: 15px;
-}
-
-.card .btn-comprar {
-  background-color: #22A3CA;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s;
-}
-
-.card .btn-comprar:hover {
-  background-color: #3587A0;
-}
-
-.carousel-button {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 1.5em;
-  transition: background-color 0.3s;
-}
-
-.carousel-button:hover {
-  background-color: #555;
-}
-
-.button-left {
-  left: 10px;
-}
-
-.button-right {
-  right: 10px;
 }
